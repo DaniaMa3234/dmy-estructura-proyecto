@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>DMY Estructura & Proyecto</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -15,12 +17,15 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
+}
+
+html{
 scroll-behavior:smooth;
 }
 
 body{
-background:#f4f4f4;
-color:#333;
+background:#ffffff;
+color:#111;
 }
 
 header{
@@ -28,217 +33,132 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-padding:20px 8%;
+padding:25px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,.9);
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(10px);
 z-index:1000;
 }
 
 .logo{
-font-size:28px;
-font-weight:700;
-color:#ff7b00;
+font-size:30px;
+font-weight:800;
+letter-spacing:2px;
+}
+
+.logo span{
+color:#ff7a00;
+}
+
+nav{
+display:flex;
+gap:30px;
 }
 
 nav a{
-color:white;
 text-decoration:none;
-margin-left:20px;
+color:#111;
 font-weight:500;
-transition:.3s;
-}
-
-nav a:hover{
-color:#ff7b00;
 }
 
 .hero{
 height:100vh;
-background:
-linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
-url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1500&q=80');
+background:url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
+position:relative;
 display:flex;
-justify-content:center;
 align-items:center;
-text-align:center;
+padding:0 8%;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.45);
+}
+
+.hero-content{
+position:relative;
 color:white;
-padding:20px;
+max-width:700px;
 }
 
 .hero-content h1{
-font-size:65px;
+font-size:80px;
+line-height:1;
 margin-bottom:20px;
 }
 
 .hero-content p{
-font-size:22px;
-margin-bottom:30px;
+font-size:20px;
+margin-bottom:35px;
 }
 
 .btn{
 display:inline-block;
-padding:15px 35px;
-background:#ff7b00;
+padding:18px 35px;
+background:#ff7a00;
 color:white;
 text-decoration:none;
-border-radius:50px;
+border-radius:40px;
 font-weight:600;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-5px);
 }
 
 section{
-padding:100px 10%;
+padding:120px 8%;
 }
 
-.titulo{
-text-align:center;
-font-size:40px;
-margin-bottom:50px;
-color:#ff7b00;
-}
-
-.servicios{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-}
-
-.card{
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-cursor:pointer;
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card h3{
-color:#ff7b00;
-margin-bottom:10px;
-}
-
-.estadisticas{
-background:#111;
-color:white;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-text-align:center;
-}
-
-.numero{
+.section-title{
 font-size:55px;
-font-weight:bold;
-color:#ff7b00;
+margin-bottom:25px;
 }
 
-.proyectos{
+.section-title span{
+color:#ff7a00;
+}
+
+.about{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
-}
-
-.proyecto{
-background:white;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-}
-
-.proyecto img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
-
-.proyecto h3,
-.proyecto p{
-padding:15px;
-}
-
-form{
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-}
-
-input,
-textarea,
-select{
-width:100%;
-padding:12px;
-margin:10px 0;
-border:1px solid #ccc;
-border-radius:8px;
-}
-
-button{
-background:#ff7b00;
-color:white;
-border:none;
-padding:15px 25px;
-border-radius:8px;
-cursor:pointer;
-font-weight:bold;
-}
-
-.contacto-info{
-margin-top:30px;
-line-height:2;
-}
-
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:40px 20px;
-}
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-width:65px;
-height:65px;
-background:#25D366;
-border-radius:50%;
-display:flex;
-justify-content:center;
+grid-template-columns:1fr 1fr;
+gap:60px;
 align-items:center;
-text-decoration:none;
-font-size:30px;
-color:white;
-box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+.about img{
+width:100%;
+border-radius:25px;
+}
+
+.about-text{
+line-height:1.9;
+font-size:18px;
+color:#555;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
 
-<div class="logo">DMY</div>
+<div class="logo">
+DMY <span>STRUCTURE</span>
+</div>
 
 <nav>
 <a href="#inicio">Inicio</a>
 <a href="#nosotros">Nosotros</a>
 <a href="#servicios">Servicios</a>
 <a href="#proyectos">Proyectos</a>
-<a href="#cotizacion">Cotización</a>
 <a href="#contacto">Contacto</a>
 </nav>
 
@@ -248,11 +168,17 @@ box-shadow:0 5px 15px rgba(0,0,0,.3);
 
 <div class="hero-content">
 
-<h1>DMY Estructura & Proyecto</h1>
+<h1>
+Construimos
+el futuro
+</h1>
 
-<p>Construimos calidad, diseñamos futuro.</p>
+<p>
+Diseño estructural, construcción y proyectos
+de alta calidad para transformar ideas en realidad.
+</p>
 
-<a href="#cotizacion" class="btn">
+<a href="#contacto" class="btn">
 Solicitar Cotización
 </a>
 
@@ -262,108 +188,231 @@ Solicitar Cotización
 
 <section id="nosotros">
 
-<h2 class="titulo">Nosotros</h2>
+<h2 class="section-title">
+Sobre <span>Nosotros</span>
+</h2>
 
-<p>
-DMY Estructura & Proyecto es una empresa especializada en diseño estructural,
-construcción, remodelación y supervisión de obras.
-Nos enfocamos en brindar soluciones seguras, modernas y eficientes.
+<div class="about">
+
+<div>
+
+<p class="about-text">
+
+DMY Estructura & Proyecto es una empresa especializada
+en diseño estructural, construcción y consultoría técnica.
+
+Nos enfocamos en desarrollar proyectos seguros,
+modernos y eficientes, combinando innovación,
+experiencia y calidad en cada obra.
+
 </p>
 
-</section>
+</div>
 
+<div>
+
+<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4?auto=format&fit=crop&w=1200&q=80">
+
+</div>
+
+</div>
+
+</section>
 <section id="servicios">
 
-<h2 class="titulo">Nuestros Servicios</h2>
+<h2 class="section-title">
+Nuestros <span>Servicios</span>
+</h2>
 
-<div class="servicios">
+<div class="services">
 
-<div class="card" onclick="location.href='#cotizacion'">
+<div class="service">
 <h3>Diseño Estructural</h3>
-<p>Planos y cálculos estructurales profesionales.</p>
+<p>
+Desarrollamos planos y cálculos estructurales
+seguros y eficientes para todo tipo de proyectos.
+</p>
 </div>
 
-<div class="card" onclick="location.href='#cotizacion'">
+<div class="service">
 <h3>Construcción</h3>
-<p>Desarrollo de proyectos residenciales y comerciales.</p>
+<p>
+Ejecución de obras residenciales,
+comerciales e industriales.
+</p>
 </div>
 
-<div class="card" onclick="location.href='#cotizacion'">
+<div class="service">
 <h3>Remodelaciones</h3>
-<p>Transformación de espacios modernos y funcionales.</p>
+<p>
+Transformamos espacios con diseños modernos
+y funcionales.
+</p>
 </div>
 
-<div class="card" onclick="location.href='#cotizacion'">
+<div class="service">
 <h3>Consultoría Técnica</h3>
-<p>Asesoría profesional para proyectos constructivos.</p>
+<p>
+Asesoramiento profesional para la toma
+de decisiones constructivas.
+</p>
 </div>
 
 </div>
 
 </section>
 
-<section class="estadisticas">
+<style>
+
+.services{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.service{
+background:#f7f7f7;
+padding:35px;
+border-radius:20px;
+transition:.4s;
+}
+
+.service:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.service h3{
+color:#ff7a00;
+margin-bottom:15px;
+}
+
+</style>
+<section id="proyectos">
+
+<h2 class="section-title">
+Nuestros <span>Proyectos</span>
+</h2>
+
+<div class="projects">
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab">
+<h3>Edificio Corporativo</h3>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750">
+<h3>Residencia Moderna</h3>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1460317442991-0ec209397118">
+<h3>Proyecto Comercial</h3>
+</div>
+
+</div>
+
+<div class="stats-section">
 
 <div>
-<div class="numero">150+</div>
-<p>Proyectos Ejecutados</p>
+<h2>150+</h2>
+<p>Proyectos</p>
 </div>
 
 <div>
-<div class="numero">98%</div>
+<h2>98%</h2>
 <p>Clientes Satisfechos</p>
 </div>
 
 <div>
-<div class="numero">10+</div>
+<h2>10+</h2>
 <p>Años de Experiencia</p>
 </div>
 
-</section>
-
-<section id="proyectos">
-
-<h2 class="titulo">Proyectos</h2>
-
-<div class="proyectos">
-
-<div class="proyecto">
-<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4?auto=format&fit=crop&w=1200&q=80">
-<h3>Edificio Comercial</h3>
-<p>Construcción moderna y eficiente.</p>
-</div>
-
-<div class="proyecto">
-<img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80">
-<h3>Proyecto Residencial</h3>
-<p>Diseño y construcción de vivienda.</p>
-</div>
-
 </div>
 
 </section>
 
-<section id="cotizacion">
+<style>
 
-<h2 class="titulo">Solicita tu Cotización</h2>
+.projects{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+margin-bottom:80px;
+}
 
-<form>
+.project img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:20px;
+}
 
-<input type="text" placeholder="Nombre Completo" required>
+.project h3{
+margin-top:15px;
+}
 
-<input type="email" placeholder="Correo Electrónico" required>
+.stats-section{
+background:#111;
+color:white;
+padding:60px;
+border-radius:25px;
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(200px,1fr));
+text-align:center;
+gap:30px;
+}
 
-<input type="tel" placeholder="Teléfono" required>
+.stats-section h2{
+font-size:55px;
+color:#ff7a00;
+}
 
-<select required>
-<option>Seleccione un servicio</option>
-<option>Diseño Estructural</option>
-<option>Construcción</option>
-<option>Remodelación</option>
-<option>Consultoría Técnica</option>
-</select>
+</style>
+</body>
+<section id="contacto">
 
-<textarea rows="6" placeholder="Describe tu proyecto"></textarea>
+<h2 class="section-title">
+Solicita tu <span>Cotización</span>
+</h2>
+
+<form
+action="https://formsubmit.co/dmy.estructurayproyecto@gmail.com"
+method="POST">
+
+<input
+type="text"
+name="Nombre"
+placeholder="Nombre Completo"
+required>
+
+<input
+type="email"
+name="Correo"
+placeholder="Correo Electrónico"
+required>
+
+<input
+type="tel"
+name="Telefono"
+placeholder="Teléfono"
+required>
+
+<textarea
+name="Proyecto"
+rows="6"
+placeholder="Describe tu proyecto"
+required></textarea>
+
+<input
+type="hidden"
+name="_subject"
+value="Nueva Cotización DMY">
 
 <button type="submit">
 Enviar Solicitud
@@ -373,53 +422,59 @@ Enviar Solicitud
 
 </section>
 
-<section id="contacto">
+<footer>
 
-<h2 class="titulo">Contacto</h2>
+<h2>DMY Estructura & Proyecto</h2>
 
-<div class="contacto-info">
-
-<p>📧 contacto.dmy@gmail.com</p>
-
-<p>📧 contabilidad.dmy@gmail.com</p>
-
-<p>📧 marketing.dmy@gmail.com</p>
-
-<p>📧 analisis.dmy@gmail.com</p>
-
-<p>📞 +57 300 123 4567</p>
-
-<p>📍 Colombia</p>
+<p>
+Construimos calidad, diseñamos futuro.
+</p>
 
 <br>
 
-<a href="mailto:contacto.dmy@gmail.com" class="btn">
-Enviar Correo
-</a>
+<p>
+📧 dmy.estructurayproyecto@gmail.com
+</p>
 
-<a href="https://wa.me/573001234567" class="btn">
-WhatsApp
-</a>
-
-</div>
-
-</section>
-
-<footer>
-
-<h3>DMY Estructura & Proyecto</h3>
-
-<p>Construimos calidad, diseñamos futuro.</p>
-
-<p>© 2026 Todos los derechos reservados.</p>
+<p>
+📞 +57 300 123 4567
+</p>
 
 </footer>
 
-<a href="https://wa.me/573001234567"
-class="whatsapp"
-target="_blank">
-💬
-</a>
+<style>
 
-</body>
-</html>
+form{
+max-width:700px;
+margin:auto;
+}
+
+input,
+textarea{
+width:100%;
+padding:18px;
+margin:12px 0;
+border:1px solid #ddd;
+border-radius:12px;
+}
+
+button{
+width:100%;
+padding:18px;
+background:#ff7a00;
+border:none;
+color:white;
+font-size:18px;
+border-radius:12px;
+cursor:pointer;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:70px 20px;
+margin-top:100px;
+}
+
+</style>
